@@ -1,0 +1,18 @@
+{
+  "compilerOptions": {
+    "strict": true,
+    "declaration": true,
+    "skipLibCheck": true,
+    "esModuleInterop": true,
+    "lib": ["ES2015", "DOM"],
+    "jsx": "react",
+    "baseUrl": "./",
+    "typeRoots": ["./node_modules/@types"],
+    "paths": {
+      "@@/*": [".dumi/tmp/*"],
+      "tlbs-map-react": ["src"],
+      "tlbs-map-react/*": ["src/*", "*"]
+    }
+  },
+  "include": [".dumirc.ts", "src/**/*"]
+}

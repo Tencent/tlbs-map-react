@@ -1,0 +1,10 @@
+node_modules
+/dist*
+/tlbs-map-react*
+/docs-dist
+.dumi/tmp
+.dumi/tmp-test
+.dumi/tmp-production
+.DS_Store
+package-lock.json
+pnpm-lock.yaml
