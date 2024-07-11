@@ -1,5 +1,5 @@
 {
-  "name": "@tencent/tlbs-map-react",
+  "name": "tlbs-map-react",
   "version": "1.0.0",
   "description": "基于react的地图组件",
   "homepage": "https://github.com/Tencent/tlbs-map-react",
