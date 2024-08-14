@@ -2,9 +2,12 @@
 import { defineConfig } from 'dumi';
 
 export default defineConfig({
-  base: '/web/tlbs-map-react/',
+  base: '/',
   publicPath: '/web/tlbs-map-react/',
   outputPath: 'docs-dist',
+  history: {
+    type: 'hash',
+  },
   // 主题配置
   themeConfig: {
     name: '腾讯位置服务', // 导航栏上的站点名称
