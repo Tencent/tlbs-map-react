@@ -15,7 +15,7 @@ $ npm install tlbs-map-react
 
 # 使用
 
-组件库使用文档参考：https://mapapi.qq.com/web/tlbs-map-react/
+组件库使用文档参考：https://mapapi.qq.com/web/tlbs-map-react/index.html
 
 ```jsx
 // 1. 引入组件
