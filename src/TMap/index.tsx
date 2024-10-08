@@ -169,13 +169,14 @@ const TMapComponent: React.FC<TMapProps> = React.forwardRef((props, ref) => {
 
   const [map, setMap] = useState<TMap.Map>(); // 存储地图实例
   const domRef = useRef<HTMLDivElement>(null); // 地图容器
+  let isInitMapInstance = false;
 
   /** 初始化地图 */
   const initMap = async () => {
     // 加载地图资源
     try {
       const result = await loadScript(apiKey, libraries);
-      if (result && domRef.current) {
+      if (result && domRef.current && !isInitMapInstance) {
         // 创建地图实例
         const mapInstance = new TMap.Map(domRef.current, {
           center: new TMap.LatLng(center.lat, center.lng),
@@ -203,6 +204,7 @@ const TMapComponent: React.FC<TMapProps> = React.forwardRef((props, ref) => {
           renderOptions,
           clip,
         });
+        isInitMapInstance = true;
         setMap(mapInstance);
 
         // 设置地图控件
