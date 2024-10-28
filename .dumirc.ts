@@ -24,33 +24,33 @@ export default defineConfig({
       },
     ],
     // 侧边菜单栏
-    sidebar: {
-      '/components': [
-        {
-          title: '地图组件',
-          children: [{ title: '地图', link: '/components/t-map' }],
-        },
-        {
-          title: '标记组件',
-          children: [
-            { title: '点标记', link: '/components/multi-marker' },
-            { title: '文本标记', link: '/components/multi-label' },
-            { title: '矢量折线', link: '/components/multi-polyline' },
-            { title: '矢量多边形', link: '/components/multi-polygon' },
-            { title: '信息窗体', link: '/components/info-window' },
-          ],
-        },
-        {
-          title: '可视化组件',
-          children: [
-            { title: '热力图', link: '/components/heat' },
-            { title: '网格图', link: '/components/grid' },
-            { title: '区域图', link: '/components/area' },
-            { title: '弧线图', link: '/components/arc' },
-          ],
-        },
-      ],
-    },
+    // sidebar: {
+    //   '/components': [
+    //     {
+    //       title: '地图组件',
+    //       children: [{ title: '地图', link: '/components/t-map' }],
+    //     },
+    //     {
+    //       title: '标记组件',
+    //       children: [
+    //         { title: '点标记', link: '/components/multi-marker' },
+    //         { title: '文本标记', link: '/components/multi-label' },
+    //         { title: '矢量折线', link: '/components/multi-polyline' },
+    //         { title: '矢量多边形', link: '/components/multi-polygon' },
+    //         { title: '信息窗体', link: '/components/info-window' },
+    //       ],
+    //     },
+    //     {
+    //       title: '可视化组件',
+    //       children: [
+    //         { title: '热力图', link: '/components/heat' },
+    //         { title: '网格图', link: '/components/grid' },
+    //         { title: '区域图', link: '/components/area' },
+    //         { title: '弧线图', link: '/components/arc' },
+    //       ],
+    //     },
+    //   ],
+    // },
     // 展示代码行号
     showLineNum: true,
     // 站点的主题色

@@ -8,7 +8,7 @@
  */
 import React, { useCallback, useRef, useState } from 'react';
 import { Button } from 'tdesign-react';
-import { TMap } from 'tlbs-map-react';
+import { BaseMap } from 'tlbs-map-react';
 
 export default () => {
   // 通过 mapRef.current 拿到地图实例，但是需要等待地图加载完成
@@ -45,7 +45,7 @@ export default () => {
           切换控件显示与隐藏
         </Button>
       </div>
-      <TMap
+      <BaseMap
         ref={mapRef}
         apiKey="OB4BZ-D4W3U-B7VVO-4PJWW-6TKDJ-WPB77"
         control = {{

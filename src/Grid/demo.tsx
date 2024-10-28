@@ -7,7 +7,7 @@
  * @desc 网格图组件 demo
  */
 import React, { useCallback, useRef, useState } from 'react';
-import { Grid, TMap } from 'tlbs-map-react';
+import { Grid, BaseMap } from 'tlbs-map-react';
 import { Button } from 'tdesign-react';
 import { GRID_DATA_ARR } from './gridData';
 
@@ -56,7 +56,7 @@ export default () => {
           切换数据
         </Button>
       </div>
-      <TMap
+      <BaseMap
         apiKey="OB4BZ-D4W3U-B7VVO-4PJWW-6TKDJ-WPB77"
         options={{
           center: { lat: 39.9841, lng: 116.3075 },
@@ -78,7 +78,7 @@ export default () => {
           }}
           onClick={clickHandler}
         />
-      </TMap>
+      </BaseMap>
     </div>
   );
 };

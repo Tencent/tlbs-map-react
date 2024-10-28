@@ -7,7 +7,7 @@
  * @desc 弧线图组件 demo
  */
 import React, { useCallback, useRef, useState } from 'react';
-import { Arc, TMap } from 'tlbs-map-react';
+import { Arc, BaseMap } from 'tlbs-map-react';
 import { ARC_DATA_ARR } from './arcData';
 import { Button } from 'tdesign-react';
 
@@ -56,7 +56,7 @@ export default () => {
           切换数据
         </Button>
       </div>
-      <TMap
+      <BaseMap
         apiKey="OB4BZ-D4W3U-B7VVO-4PJWW-6TKDJ-WPB77"
         options={{
           center: { lat: 37.8079, lng: 112.2690 },
@@ -82,7 +82,7 @@ export default () => {
           }}
           onClick={clickHandler}
         />
-      </TMap>
+      </BaseMap>
     </div>
   );
 };

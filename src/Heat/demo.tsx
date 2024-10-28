@@ -7,7 +7,7 @@
  * @desc 热力图组件 demo
  */
 import React, { useCallback, useRef, useState } from 'react';
-import { Heat, TMap } from 'tlbs-map-react';
+import { Heat, BaseMap } from 'tlbs-map-react';
 import { Button } from 'tdesign-react';
 
 
@@ -41,7 +41,7 @@ export default () => {
           打印图层实例
         </Button>
       </div>
-      <TMap
+      <BaseMap
         apiKey="OB4BZ-D4W3U-B7VVO-4PJWW-6TKDJ-WPB77"
         options={{
           center: { lat: 39.9099, lng: 116.3975 },
@@ -58,7 +58,7 @@ export default () => {
           min={0}
           max={180}
         />
-      </TMap>
+      </BaseMap>
     </div>
   );
 };

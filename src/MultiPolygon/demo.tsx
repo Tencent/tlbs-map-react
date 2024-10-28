@@ -8,7 +8,7 @@
  */
 import React, { useCallback, useRef, useState } from 'react';
 import { Button } from 'tdesign-react';
-import { MultiPolygon, TMap } from 'tlbs-map-react';
+import { MultiPolygon, BaseMap } from 'tlbs-map-react';
 
 /** 样式 */
 const styles = {
@@ -78,7 +78,7 @@ export default () => {
           北京新浪总部大厦
         </Button>
       </div>
-      <TMap
+      <BaseMap
         apiKey="OB4BZ-D4W3U-B7VVO-4PJWW-6TKDJ-WPB77"
         options={{
           zoom: 17,
@@ -90,7 +90,7 @@ export default () => {
           geometries={geometries}
           onClick={clickHandler}
         />
-      </TMap>
+      </BaseMap>
     </div>
   );
 };

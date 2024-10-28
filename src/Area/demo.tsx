@@ -7,7 +7,7 @@
  * @desc 区域图组件 demo
  */
 import React, { useCallback, useRef, useState } from 'react';
-import { Area, TMap } from 'tlbs-map-react';
+import { Area, BaseMap } from 'tlbs-map-react';
 import { AREA_DATA_ARR } from './areaData';
 import { Button } from 'tdesign-react';
 
@@ -65,7 +65,7 @@ export default () => {
           切换数据
         </Button>
       </div>
-      <TMap
+      <BaseMap
         apiKey="OB4BZ-D4W3U-B7VVO-4PJWW-6TKDJ-WPB77"
         options={{
           center: { lat: 40.0460, lng: 116.2868 },
@@ -95,7 +95,7 @@ export default () => {
           }}
           onClick={clickHandler}
         />
-      </TMap>
+      </BaseMap>
     </div>
   );
 };

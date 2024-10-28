@@ -8,7 +8,7 @@
  */
 import React, { useCallback, useRef, useState } from 'react';
 import { Button } from 'tdesign-react';
-import { InfoWindow, TMap } from 'tlbs-map-react';
+import { InfoWindow, BaseMap } from 'tlbs-map-react';
 
 export default () => {
   const infoWindowRef: any = useRef(null);
@@ -36,7 +36,7 @@ export default () => {
           北京新浪总部大楼
         </Button>
       </div>
-      <TMap
+      <BaseMap
         apiKey="OB4BZ-D4W3U-B7VVO-4PJWW-6TKDJ-WPB77"
         options={{
           zoom: 17,
@@ -52,7 +52,7 @@ export default () => {
             console.log('🚀🚀🚀 关闭信息窗体');
           }}
         />
-      </TMap>
+      </BaseMap>
     </div>
   );
 };
