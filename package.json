@@ -26,6 +26,7 @@
     "lint": "npm run lint:es && npm run lint:css",
     "lint:css": "stylelint \"{src,test}/**/*.{css,less}\"",
     "lint:es": "eslint \"{src,test}/**/*.{js,jsx,ts,tsx}\"",
+    "new": "node scripts/new-component/index.mjs",
     "prepare": "husky install && dumi setup",
     "prepublishOnly": "father doctor && npm run build",
     "start": "npm run dev"
@@ -63,6 +64,7 @@
     "eslint-config-tencent": "^1.0.4",
     "father": "^4.1.0",
     "husky": "^8.0.1",
+    "inquirer": "^6.5.2",
     "lint-staged": "^13.0.3",
     "prettier": "^2.7.1",
     "prettier-plugin-organize-imports": "^3.0.0",
