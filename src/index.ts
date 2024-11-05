@@ -12,5 +12,3 @@ export { default as MultiLabel } from './MultiLabel';
 export { default as MultiMarker } from './MultiMarker';
 export { default as MultiPolygon } from './MultiPolygon';
 export { default as MultiPolyline } from './MultiPolyline';
-
-
