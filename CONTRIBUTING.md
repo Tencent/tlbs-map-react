@@ -37,6 +37,7 @@ $ npm run dev
 - 新增组件后需在 `src/index.ts` 中 暴露组件
 - 在 `.dumirc.ts` 中配置 `sidebar` 来控制组件文档的显示，注意这里的 `link` 要用短横线命名法（kebab-case）
 - 在组件文档中说明组件 props
+- 在项目根目录执行`npm run new`能够快速创建上述组件文件
 
 ### 4. 分支规范
 
