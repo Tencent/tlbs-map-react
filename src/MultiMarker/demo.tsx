@@ -45,6 +45,14 @@ export default () => {
   }, []);
 
   /**
+     * 地图初始化完成事件处理器
+     * @param event
+     */
+  const onMapInited = useCallback(() => {
+    console.log('🚀🚀🚀 地图加载完成, 打印图层实例', markerRef.current);
+  }, []);
+
+  /**
    * 图层点击事件处理器
    * @param event
    */
@@ -70,6 +78,7 @@ export default () => {
         options={{
           zoom: 17,
         }}
+        onMapInited={onMapInited}
       >
         <MultiMarker
           ref={markerRef}

@@ -142,7 +142,7 @@ const TMapComponent: React.FC<TMapProps> = React.forwardRef((props, ref) => {
     duration = 500,
     options = {},
     children,
-  }: TMapProps = props;
+  }: TMapProps = props as TMapProps;
   const {
     center = { lat: 40.0404, lng: 116.2735 },
     zoom = 12,
@@ -209,6 +209,12 @@ const TMapComponent: React.FC<TMapProps> = React.forwardRef((props, ref) => {
 
         // 设置地图控件
         setMapControl(mapInstance, showControl, control);
+        if (props.onMapInited) {
+          // 延迟触发，保证在事件回调中获取到地图及图层实例
+          setTimeout(() => {
+            props.onMapInited(mapInstance);
+          });
+        }
       }
     } catch (error) {
       console.error(error);

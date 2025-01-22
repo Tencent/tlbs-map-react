@@ -22,6 +22,14 @@ export default () => {
   }, []);
 
   /**
+   * 地图初始化完成事件处理器
+   * @param event
+   */
+  const onMapInited = useCallback(() => {
+    console.log('🚀🚀🚀 地图加载完成', mapRef.current);
+  }, []);
+
+  /**
    * 地图点击事件处理器
    * @param event
    */
@@ -61,6 +69,7 @@ export default () => {
           showControl,
         }}
         onClick={clickHandler}
+        onMapInited={onMapInited}
       />
     </div>
   );

@@ -9,15 +9,16 @@
 
 **2. 组件 Props**
 
-| 属性        | 类型                                                                     | 说明               | 可选性 | 默认值                            |
-| :---------- | :----------------------------------------------------------------------- | :----------------- | :----- | :-------------------------------- |
-| apiKey      | string                                                                   | 地图 Key           | 必填   |                                   |
-| libraries   | string                                                                   | 地图附加库         | 可选   | 'visualization,geometry,tools'    |
-| className   | string                                                                   | 地图容器类名       | 可选   | tmap-container                    |
-| style       | Record<string, string>                                                   | 地图容器样式       | 可选   | { height: '100%', width: '100%' } |
-| control     | ControlProps                                                             | 地图控件           | 可选   | undefined                         |
-| duration    | number                                                                   | 动画时间           | 可选   | 500                               |
-| **options** | [MapOptions](https://lbs.qq.com/webApi/javascriptGL/glDoc/docIndexMap#2) | 地图配置参数(官网) | 可选   | 官网默认值                        |
+| 属性            | 类型                                                                     | 说明                                                 | 可选性 | 默认值                            |
+| :-------------- | :----------------------------------------------------------------------- | :--------------------------------------------------- | :----- | :-------------------------------- |
+| apiKey          | string                                                                   | 地图 Key                                             | 必填   |                                   |
+| libraries       | string                                                                   | 地图附加库                                           | 可选   | 'visualization,geometry,tools'    |
+| className       | string                                                                   | 地图容器类名                                         | 可选   | tmap-container                    |
+| style           | Record<string, string>                                                   | 地图容器样式                                         | 可选   | { height: '100%', width: '100%' } |
+| control         | ControlProps                                                             | 地图控件                                             | 可选   | undefined                         |
+| duration        | number                                                                   | 动画时间                                             | 可选   | 500                               |
+| **options**     | [MapOptions](https://lbs.qq.com/webApi/javascriptGL/glDoc/docIndexMap#2) | 地图配置参数(官网)                                   | 可选   | 官网默认值                        |
+| **onMapInited** | function                                                                 | 地图加载完成回调，在回调中可以获取地图实例、图层实例 | 可选   | -                                 |
 
 **MapOptions**
 | 属性名称 | 类型 | 说明 |
@@ -65,4 +66,6 @@ interface ControlConfig {
 如：`onclick | onClick | onrightclick | onRightclick | oncenter_changed | onCenter_changed`
 
 通过 props 传入的事件的回调函数不可改变
+
+支持事件参考[文档](https://lbs.qq.com/webApi/javascriptGL/glDoc/docIndexMap)
 :::
