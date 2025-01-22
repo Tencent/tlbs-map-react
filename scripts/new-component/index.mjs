@@ -53,7 +53,7 @@ function insertComponentToIndex(name, indexPath) {
 
 function getExportStr(name) {
   const firstLetterUpperName = getFirstLetterUpper(name);
-  return `\nexport {default as ${firstLetterUpperName}} from './${firstLetterUpperName}';`;
+  return `\nexport { default as ${firstLetterUpperName} } from './${firstLetterUpperName}';`;
 }
 
 function getFirstLetterUpper(a) {

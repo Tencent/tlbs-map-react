@@ -8,7 +8,7 @@ interface Props {
 
 const ${name}Component: FC<Props> = React.forwardRef((props, ref) => {
   const map = useContext(MapContext); // 获取地图实例
-  const [instance, setInstance] = useState<TMap.visualization.Heat>(); // 存储热力图图层实例
+  const [instance, setInstance] = useState(); // 存储图层实例
 
   /** 初始化图层 */
   const init${name} = () => {

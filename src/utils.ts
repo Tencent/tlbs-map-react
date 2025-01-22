@@ -49,7 +49,8 @@ export const getStyle = (
   stylesObj: TMap.MultiMarkerStyleHash
   | TMap.MultiLabelStyleHash
   | TMap.MultiPolylineStyleHash
-  | TMap.MultiPolygonStyleHash,
+  | TMap.MultiPolygonStyleHash
+  | TMap.MultiCircleStyleHash,
 ) => {
   const styles: any = {};
 
@@ -67,6 +68,8 @@ export const getStyle = (
       case 'polygon':
         styles[item] = new TMap.PolygonStyle(stylesObj[item]);
         break;
+      case 'circle':
+        styles[item] = new TMap.CircleStyle(stylesObj[item]);
       default:
         break;
     }
