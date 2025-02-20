@@ -17,7 +17,7 @@ export default () => {
 
   /** 打印图层实例 */
   const printInstance = useCallback(() => {
-    console.log('🚀🚀🚀  打印图层实例', infoWindowRef?.current?.InfoWindowLayer);
+    console.log('🚀🚀🚀  打印图层实例', infoWindowRef?.current);
   }, []);
 
   return (

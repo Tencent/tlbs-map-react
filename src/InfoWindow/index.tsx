@@ -53,6 +53,11 @@ const InfoWindowComponent: FC<InfoWindowProps> = React.forwardRef((props, ref) =
       offset,
       enableCustom,
     });
+
+    if (!visible) {
+      infoWindowInstance.close();
+    }
+
     setInstance(infoWindowInstance);
 
     // 绑定事件：点击信息窗的关闭按钮时会触发此事件

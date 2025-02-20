@@ -5,6 +5,11 @@ toc: false
 docClass: timeline
 ---
 
+## 🌈 1.1.0 `2025-02-20`
+
+- TMap: 新增 onMapInited 回调，支持获取地图实例、图层实例
+- MultiCircle: 新增`MultiCircle`组件
+
 ## 🌈 1.0.1 `2024-10-08`
 
 - TMap: 修复在 StrictMode 组件下`TMap`组件重复渲染的问题
