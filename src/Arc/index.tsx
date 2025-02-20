@@ -26,7 +26,7 @@ const ArcComponent: FC<ArcProps> = React.forwardRef((props, ref) => {
     data = [],
     mode,
     options = {},
-  }: ArcProps = props;
+  } = props as ArcProps;
 
   const {
     pickStyle,

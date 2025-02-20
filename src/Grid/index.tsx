@@ -45,7 +45,7 @@ const GridComponent: FC<GridProps> = React.forwardRef((props, ref) => {
     heightRange,
     showRange = [0, 1000],
     options = {},
-  }: GridProps = props;
+  }: GridProps = props as GridProps;
 
   const {
     selectOptions,

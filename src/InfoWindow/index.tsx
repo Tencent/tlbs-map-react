@@ -30,7 +30,7 @@ const InfoWindowComponent: FC<InfoWindowProps> = React.forwardRef((props, ref) =
     position = { lat: 40.0404, lng: 116.2735 },
     content = '',
     options = {},
-  }: InfoWindowProps = props;
+  }: InfoWindowProps = props as InfoWindowProps;
 
   const {
     zIndex,
