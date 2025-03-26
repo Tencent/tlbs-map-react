@@ -19,7 +19,7 @@ export interface CustomMapOptions extends Omit<TMap.MapOptions, 'center' | 'boun
   boundary?: { sw: TMap.LatLngData; ne: TMap.LatLngData };
 }
 
-/* ------------------------- Marker ------------------------- */
+/* ------------------------- Marker MarkerCluster ------------------------- */
 export interface CustomPointGeometry extends Omit<TMap.PointGeometry, 'position'> {
   position: TMap.LatLngData;
 }
@@ -42,6 +42,21 @@ export interface CustomPolylineGeometry extends Omit<TMap.PolylineGeometry, 'pat
 /* ------------------------- Polygon ------------------------- */
 export interface CustomPolygonGeometry extends Omit<TMap.PolygonGeometry, 'paths'> {
   paths: TMap.LatLngData[] | TMap.LatLngData[][] | TMap.LatLngData[][][];
+}
+
+/* ------------------------- Rectangle ------------------------- */
+export interface CustomRectangleGeometry extends Omit<TMap.RectangleGeometry, 'center'> {
+  center: TMap.LatLngData;
+}
+
+/* ------------------------- Circle ------------------------- */
+export interface CustomCircleGeometry extends Omit<TMap.CircleGeometry, 'center'> {
+  center: TMap.LatLngData;
+}
+
+/* ------------------------- Ellipse ------------------------- */
+export interface CustomEllipseGeometry extends Omit<TMap.EllipseGeometry, 'center'> {
+  center: TMap.LatLngData;
 }
 
 /* ------------------------- Arc ------------------------- */

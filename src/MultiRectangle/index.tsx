@@ -1,16 +1,16 @@
 /**
- * @desc 圆形组件
+ * @desc 矩形组件
  */
 import React, { useContext, useEffect, useImperativeHandle, useState } from 'react';
 import { MapContext, useEventListener } from 'tlbs-map-react';
-import { CustomCircleGeometry } from 'tlbs-map-react/interfaces';
+import { CustomRectangleGeometry } from 'tlbs-map-react/interfaces';
 import { getStyle } from 'tlbs-map-react/utils';
 
 /**
  * 生成几何信息数组
  * @param geos 几何信息数组
  */
-const getGeometries = (geos: CustomCircleGeometry[]) => geos.map((item) => {
+const getGeometries = (geos: CustomRectangleGeometry[]) => geos.map((item) => {
   const { center, ...rest } = item;
   return {
     ...rest,
@@ -18,9 +18,9 @@ const getGeometries = (geos: CustomCircleGeometry[]) => geos.map((item) => {
   };
 });
 
-interface MultiCircleProps {
+interface MultiRectangleProps {
   /**
-   * 是否显示圆形组件
+   * 是否显示矩形组件
    */
   visible?: boolean;
   /**
@@ -28,49 +28,49 @@ interface MultiCircleProps {
    */
   id?: string;
   /**
-   * 圆形相关样式
+   * 矩形相关样式
    */
-  styles?: TMap.MultiCircleStyleHash;
+  styles?: TMap.MultiRectangleStyleHash;
   /**
-   * 圆形数据数组
+   * 矩形数据数组
    */
-  geometries?: CustomCircleGeometry[]
+  geometries?: CustomRectangleGeometry[]
   /**
    * GL API 参数
    */
-  options?: Omit<TMap.MultiCircleOptions, 'map' | 'id' | 'styles' | 'geometries'>;
+  options?: Omit<TMap.MultiRectangleOptions, 'map' | 'id' | 'styles' | 'geometries'>;
   [key: string]: any;
 }
 
-const MultiCircleComponent: React.FC<MultiCircleProps> = React.forwardRef((props, ref) => {
+const MultiRectangleComponent: React.FC<MultiRectangleProps> = React.forwardRef((props, ref) => {
   const {
     visible = true,
     id,
     styles = {},
     geometries = [],
     options = {},
-  } = props as MultiCircleProps;
+  } = props as MultiRectangleProps;
 
   const map = useContext(MapContext); // 获取地图实例
-  const [instance, setInstance] = useState<TMap.MultiCircle>(); // 存储圆形图层实例
+  const [instance, setInstance] = useState<TMap.MultiRectangle>(); // 存储矩形图层实例
 
-  /** 初始化圆形图层 */
-  const initMultiCircle = () => {
+  /** 初始化矩形图层 */
+  const initMultiRectangle = () => {
     if (!map) return;
 
-    const multiCircleInstance = new TMap.MultiCircle({
+    const multiRectangleInstance = new TMap.MultiRectangle({
       ...options,
       id,
       map,
-      styles: getStyle('circle', styles),
+      styles: getStyle('rectangle', styles),
       geometries: getGeometries(geometries),
     });
-    setInstance(multiCircleInstance);
+    setInstance(multiRectangleInstance);
   };
 
-  // @hook 初始化圆形图层
+  // @hook 初始化矩形图层
   useEffect(() => {
-    if (!instance) initMultiCircle();
+    if (!instance) initMultiRectangle();
 
     return () => {
       instance?.setMap(null);
@@ -85,7 +85,7 @@ const MultiCircleComponent: React.FC<MultiCircleProps> = React.forwardRef((props
 
   // @hook 监听样式改变
   useEffect(() => {
-    instance?.setStyles(getStyle('circle', styles));
+    instance?.setStyles(getStyle('rectangle', styles));
   }, [styles]);
 
   // @hook 监听几何信息改变
@@ -101,4 +101,4 @@ const MultiCircleComponent: React.FC<MultiCircleProps> = React.forwardRef((props
   return null;
 });
 
-export default MultiCircleComponent;
+export default MultiRectangleComponent;

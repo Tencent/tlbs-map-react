@@ -1,16 +1,16 @@
 /**
- * @desc 圆形组件
+ * @desc 椭圆组件
  */
 import React, { useContext, useEffect, useImperativeHandle, useState } from 'react';
 import { MapContext, useEventListener } from 'tlbs-map-react';
-import { CustomCircleGeometry } from 'tlbs-map-react/interfaces';
+import { CustomEllipseGeometry } from 'tlbs-map-react/interfaces';
 import { getStyle } from 'tlbs-map-react/utils';
 
 /**
  * 生成几何信息数组
  * @param geos 几何信息数组
  */
-const getGeometries = (geos: CustomCircleGeometry[]) => geos.map((item) => {
+const getGeometries = (geos: CustomEllipseGeometry[]) => geos.map((item) => {
   const { center, ...rest } = item;
   return {
     ...rest,
@@ -18,9 +18,9 @@ const getGeometries = (geos: CustomCircleGeometry[]) => geos.map((item) => {
   };
 });
 
-interface MultiCircleProps {
+interface MultiEllipseProps {
   /**
-   * 是否显示圆形组件
+   * 是否显示椭圆组件
    */
   visible?: boolean;
   /**
@@ -28,51 +28,53 @@ interface MultiCircleProps {
    */
   id?: string;
   /**
-   * 圆形相关样式
+   * 椭圆相关样式
    */
-  styles?: TMap.MultiCircleStyleHash;
+  styles?: TMap.MultiEllipseStyleHash;
   /**
-   * 圆形数据数组
+   * 椭圆数据数组
    */
-  geometries?: CustomCircleGeometry[]
+  geometries?: CustomEllipseGeometry[]
   /**
    * GL API 参数
    */
-  options?: Omit<TMap.MultiCircleOptions, 'map' | 'id' | 'styles' | 'geometries'>;
+  options?: Omit<TMap.MultiEllipseOptions, 'map' | 'id' | 'styles' | 'geometries'>;
   [key: string]: any;
 }
 
-const MultiCircleComponent: React.FC<MultiCircleProps> = React.forwardRef((props, ref) => {
+const MultiEllipseComponent: React.FC<MultiEllipseProps> = React.forwardRef((props, ref) => {
   const {
     visible = true,
     id,
     styles = {},
     geometries = [],
     options = {},
-  } = props as MultiCircleProps;
+  } = props as MultiEllipseProps;
 
   const map = useContext(MapContext); // 获取地图实例
-  const [instance, setInstance] = useState<TMap.MultiCircle>(); // 存储圆形图层实例
+  const [instance, setInstance] = useState<TMap.MultiEllipse>(); // 存储椭圆图层实例
 
-  /** 初始化圆形图层 */
-  const initMultiCircle = () => {
+  /** 初始化椭圆图层 */
+  const initMultiEllipse = () => {
     if (!map) return;
 
-    const multiCircleInstance = new TMap.MultiCircle({
+    const multiEllipseInstance = new TMap.MultiEllipse({
       ...options,
       id,
       map,
-      styles: getStyle('circle', styles),
+      styles: getStyle('ellipse', styles),
       geometries: getGeometries(geometries),
     });
-    setInstance(multiCircleInstance);
+    setInstance(multiEllipseInstance);
   };
 
-  // @hook 初始化圆形图层
+  // @hook 初始化椭圆图层
   useEffect(() => {
-    if (!instance) initMultiCircle();
+    if (!instance) initMultiEllipse();
 
     return () => {
+      // NOTE tmap-gl-types 库中 MultiEllipse 类定义错误，没有 extends GeometryOverlay
+      // @ts-ignore
       instance?.setMap(null);
     };
   }, [map, instance]);
@@ -85,7 +87,7 @@ const MultiCircleComponent: React.FC<MultiCircleProps> = React.forwardRef((props
 
   // @hook 监听样式改变
   useEffect(() => {
-    instance?.setStyles(getStyle('circle', styles));
+    instance?.setStyles(getStyle('ellipse', styles));
   }, [styles]);
 
   // @hook 监听几何信息改变
@@ -95,10 +97,12 @@ const MultiCircleComponent: React.FC<MultiCircleProps> = React.forwardRef((props
 
   // @hook 监听图层可见性改变
   useEffect(() => {
+    // NOTE tmap-gl-types 库中 MultiEllipse 类定义错误，没有 extends GeometryOverlay
+    // @ts-ignore
     instance?.setVisible(visible);
   }, [visible, instance]);
 
   return null;
 });
 
-export default MultiCircleComponent;
+export default MultiEllipseComponent;

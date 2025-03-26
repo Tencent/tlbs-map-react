@@ -13,3 +13,6 @@ export { default as MultiMarker } from './MultiMarker';
 export { default as MultiPolygon } from './MultiPolygon';
 export { default as MultiPolyline } from './MultiPolyline';
 export { default as MultiCircle } from './MultiCircle';
+export { default as MarkerCluster } from './MarkerCluster';
+export { default as MultiRectangle } from './MultiRectangle';
+export { default as MultiEllipse } from './MultiEllipse';

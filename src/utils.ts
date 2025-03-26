@@ -50,7 +50,9 @@ export const getStyle = (
   | TMap.MultiLabelStyleHash
   | TMap.MultiPolylineStyleHash
   | TMap.MultiPolygonStyleHash
-  | TMap.MultiCircleStyleHash,
+  | TMap.MultiCircleStyleHash
+  | TMap.MultiRectangleStyleHash
+  | TMap.MultiEllipseStyleHash,
 ) => {
   const styles: any = {};
 
@@ -66,10 +68,20 @@ export const getStyle = (
         styles[item] = new TMap.PolylineStyle(stylesObj[item]);
         break;
       case 'polygon':
-        styles[item] = new TMap.PolygonStyle(stylesObj[item]);
+        if ((stylesObj[item] as TMap.MultiPolygonStyleHash).extrudeHeight) {
+          styles[item] = new TMap.ExtrudablePolygonStyle(stylesObj[item]);
+        } else {
+          styles[item] = new TMap.PolygonStyle(stylesObj[item]);
+        }
         break;
       case 'circle':
         styles[item] = new TMap.CircleStyle(stylesObj[item]);
+      case 'rectangle':
+        styles[item] = new TMap.RectangleStyle(stylesObj[item]);
+        break;
+      case 'ellipse':
+        styles[item] = new TMap.EllipseStyle(stylesObj[item]);
+        break;
       default:
         break;
     }
