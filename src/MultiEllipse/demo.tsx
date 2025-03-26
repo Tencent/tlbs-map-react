@@ -4,20 +4,20 @@
  * defaultShowCode: true
  */
 /**
- * @desc 圆形组件 demo
+ * @desc 椭圆组件 demo
  */
 import React, { useCallback, useRef, useState } from 'react';
 import { Button } from 'tdesign-react';
-import { MultiCircle, BaseMap } from 'tlbs-map-react';
+import { MultiEllipse, BaseMap } from 'tlbs-map-react';
 
 /** 样式 */
 const styles = {
-  circle1: {
+  ellipse1: {
     color: 'rgba(255, 73, 0, 0.2)',
     borderColor: '#FF4900',
     showBorder: true,
   },
-  circle2: {
+  ellipse2: {
     color: 'rgba(255, 206, 0, 0.2)',
     borderColor: '#FC0',
     showBorder: true,
@@ -27,26 +27,28 @@ const styles = {
 /** 数据 */
 const geometriesData1 = [
   {
-    styleId: 'circle1',
+    styleId: 'ellipse1',
     center: { lat: 40.0404, lng: 116.2735 },
-    radius: 100,
+    majorRadius: 100,
+    minorRadius: 80,
   },
 ];
 const geometriesData2 = [
   {
-    styleId: 'circle2',
+    styleId: 'ellipse2',
     center: { lat: 40.0415, lng: 116.2763 },
-    radius: 80,
+    majorRadius: 80,
+    minorRadius: 100,
   },
 ];
 
 export default () => {
-  const circleRef: any = useRef(null);
+  const ellipseRef: any = useRef(null);
   const [geometries, setGeometries] = useState<any>(geometriesData1);
 
   /** 打印图层实例 */
   const printInstance = useCallback(() => {
-    console.log('🚀🚀🚀  打印图层实例', circleRef.current);
+    console.log('🚀🚀🚀  打印图层实例', ellipseRef.current);
   }, []);
 
   /**
@@ -76,8 +78,8 @@ export default () => {
           zoom: 17,
         }}
       >
-        <MultiCircle
-          ref={circleRef}
+        <MultiEllipse
+          ref={ellipseRef}
           styles={styles}
           geometries={geometries}
           onClick={clickHandler}
