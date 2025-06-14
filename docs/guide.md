@@ -49,7 +49,7 @@ export default () => {
     console.log('🚀🚀🚀 点标记图层点击事件', event);
   }, []);
 
-  rerturn(
+  return(
     <>
       <!-- 2. 写组件标签 -->
       <TMap ref={mapRef} apiKey="OB4BZ-D4W3U-B7VVO-4PJWW-6TKDJ-WPB77">
