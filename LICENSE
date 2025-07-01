@@ -1,6 +1,6 @@
 Tencent is pleased to support the open source community by making tlbs-map-react available.
 
-Copyright (C) 2024 THL A29 Limited, a Tencent company.  All rights reserved.
+Copyright (C) 2024 Tencent.  All rights reserved.
 
 tlbs-map-react is licensed under the MIT License except for the third-party components listed below.
 
@@ -23,61 +23,61 @@ Open Source Software Licensed under the MIT License:
 1. @commitlint/cli
 Copyright (c) 2016 - present Mario Nebl
 
-2. @commitlint/config-conventional
+1. @commitlint/config-conventional
 Copyright (c) 2016 - present Mario Nebl
 
-3. @types/react
+1. @types/react
 Copyright (c) Microsoft Corporation.
 
-4. @types/react-dom
+1. @types/react-dom
 Copyright (c) Microsoft Corporation.
 
-5. @umijs/lint
+1. @umijs/lint
 Copyright (c) 2017-present ChenCheng (sorrycc@gmail.com)
 
-6. dumi
+1. dumi
 Copyright (c) 2019-present UmiJS Team
 
-7. eslint
+1. eslint
 Copyright OpenJS Foundation and other contributors, <www.openjsf.org>
 
-8. father
+1. father
 Copyright (c) 2017-present UmiJS Team
 
-9. husky
+1. husky
 Copyright (c) 2021 typicode
 
-10. lint-staged
+1.  lint-staged
 Copyright (c) 2016 Andrey Okonetchnikov
 
-11. prettier
+1.  prettier
 Copyright © James Long and contributors
 
-12. prettier-plugin-organize-imports
+1.  prettier-plugin-organize-imports
 Copyright (c) Simon Hänisch
 
-13. prettier-plugin-packagejson
+1.  prettier-plugin-packagejson
 Copyright (c) matzkoh
 
-14. stylelint
+1.  stylelint
 Copyright (c) 2015 - present Maxime Thirouin, David Clark & Richard Hallows
 
-15. tdesign-react
+1.  tdesign-react
 Copyright (c) 2021-present Tdesign
 
-16. @babel/eslint-parser
+1.  @babel/eslint-parser
 Copyright (c) 2014-present Sebastian McKenzie and other contributors
 
-17. eslint-plugin-chalk
+1.  eslint-plugin-chalk
 Copyright (c) 2020 Jens Simon
 
-18. eslint-plugin-import
+1.  eslint-plugin-import
 Copyright (c) 2015 Ben Mosher
 
-19. @babel/core
+1.  @babel/core
 Copyright (c) 2014-present Sebastian McKenzie and other contributors
 
-20. eslint-plugin-prettier
+1.  eslint-plugin-prettier
 Copyright © 2017 Andres Suarez and Teddy Katz
 
 
