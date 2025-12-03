@@ -234,10 +234,24 @@ const TMapComponent: React.FC<TMapProps> = React.forwardRef((props, ref) => {
   // @hook 让父组件能够通过 ref 访问到子组件内部的 map 地图实例
   useImperativeHandle(ref, () => map, [map]);
 
+  // @memo 缓存中心点,避免引用变化导致不必要的地图中心点更新
+  const memoizedCenter = useMemo(() => center, [center.lat, center.lng]);
+
+  // @memo 缓存偏移量,避免引用变化导致不必要的更新
+  const memoizedOffset = useMemo(() => offset, [offset.x, offset.y]);
+
+  // @memo 缓存边界配置,避免引用变化导致不必要的更新
+  const memoizedBoundary = useMemo(() => boundary, [
+    boundary?.sw?.lat,
+    boundary?.sw?.lng,
+    boundary?.ne?.lat,
+    boundary?.ne?.lng,
+  ]);
+
   // @hook 监听地图中心点改变
   useEffect(() => {
-    map?.panTo(new TMap.LatLng(center.lat, center.lng), { duration });
-  }, [center]);
+    map?.panTo(new TMap.LatLng(memoizedCenter.lat, memoizedCenter.lng), { duration });
+  }, [memoizedCenter]);
 
   // @hook 监听地图缩放级别改变
   useEffect(() => {
@@ -271,8 +285,8 @@ const TMapComponent: React.FC<TMapProps> = React.forwardRef((props, ref) => {
 
   // @hook 监听地图中心与容器的偏移量改变
   useEffect(() => {
-    map?.setOffset(offset);
-  }, [offset]);
+    map?.setOffset(memoizedOffset);
+  }, [memoizedOffset]);
 
   // @hook 监听地图是否可拖拽
   useEffect(() => {
@@ -301,13 +315,13 @@ const TMapComponent: React.FC<TMapProps> = React.forwardRef((props, ref) => {
 
   // @hook 监听地图边界改变
   useEffect(() => {
-    if (boundary) {
+    if (memoizedBoundary) {
       map?.setBoundary(new TMap.LatLngBounds(
-        new TMap.LatLng(boundary.sw.lat, boundary.sw.lng),
-        new TMap.LatLng(boundary.ne.lat, boundary.ne.lng),
+        new TMap.LatLng(memoizedBoundary.sw.lat, memoizedBoundary.sw.lng),
+        new TMap.LatLng(memoizedBoundary.ne.lat, memoizedBoundary.ne.lng),
       ));
     }
-  }, [boundary]);
+  }, [memoizedBoundary]);
 
   // @hook 监听地图底图改变
   useEffect(() => {
