@@ -8,7 +8,7 @@ interface GridProps {
   /**
    * 网格图数据
    */
-  data: TMap.visualization.HeatPoint[];
+  data?: TMap.visualization.HeatPoint[];
   /**
    * 单位正方形网格边长, 单位为米, 默认1000
    */

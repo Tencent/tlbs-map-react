@@ -8,7 +8,7 @@ interface AreaProps {
   /**
    * 区域图数据
    */
-  data: TMap.visualization.AreaPlane[];
+  data?: TMap.visualization.AreaPlane[];
   /**
    * 区域图样式
    */

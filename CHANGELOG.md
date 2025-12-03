@@ -5,6 +5,12 @@ toc: false
 docClass: timeline
 ---
 
+## 🌈 1.1.1 `2025-12-03`
+
+### 🚀 Performance
+
+- TMap: 优化地图组件性能,使用 useMemo 缓存对象引用,避免不必要的重新渲染
+
 ## 🌈 1.1.0 `2025-02-20`
 
 - TMap: 新增 onMapInited 回调，支持获取地图实例、图层实例

@@ -12,7 +12,7 @@ interface InfoWindowProps {
   /**
    * 信息窗的经纬度坐标
    */
-  position: TMap.LatLngData;
+  position?: TMap.LatLngData;
   /**
    * 信息窗显示内容，默认为空字符串。当enableCustom为true时，需传入信息窗体的dom字符串
    */
