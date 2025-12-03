@@ -9,7 +9,7 @@ interface ArcProps {
   /**
    * 弧线图数据
    */
-  data: CustomArcLine[];
+  data?: CustomArcLine[];
   /**
    * 弧线模式
    */
