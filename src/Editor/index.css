@@ -1,0 +1,18 @@
+.toolbar {
+  height: 35px;
+  display: flex;
+  justify-content: space-between;
+  float: left;
+}
+
+.editor-btn {
+  background-repeat: no-repeat;
+  background-size: 30px 30px;
+  border-radius: 4px;
+  width: 35px;
+  height: 35px;
+}
+
+.editor-btn:hover {
+  background-color: red;
+}
