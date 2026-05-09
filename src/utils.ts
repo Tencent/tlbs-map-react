@@ -34,7 +34,7 @@ export const useEventListener = (
     // 卸载事件
     return () => {
       Object.keys(eventsMap).forEach((eventName) => {
-        instance.on(eventName, eventsMap[eventName]);
+        instance.off(eventName, eventsMap[eventName]);
       });
     };
   }, [instance]);
